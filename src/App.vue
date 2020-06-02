@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="col-md-6 order-md-1">
         <img alt="Vue logo" src="./assets/logo.png">
         <Header />
         <TodayLunch />
