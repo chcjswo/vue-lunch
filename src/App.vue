@@ -2,6 +2,7 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
         <Header />
+        <TodayLunch />
         <Restaurant v-for="(data, i) in 20" :key="i" :data="data" />
         <Choice />
         <Regist />
@@ -10,6 +11,7 @@
 
 <script>
     import Header from './components/Header';
+    import TodayLunch from "./components/TodayLunch";
     import Restaurant from "./components/Restaurant";
     import Choice from "./components/Choice";
     import Regist from "./components/Regist";
@@ -18,6 +20,7 @@
         name: 'App',
         components: {
             Header,
+            TodayLunch,
             Restaurant,
             Choice,
             Regist
