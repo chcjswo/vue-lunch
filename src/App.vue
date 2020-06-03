@@ -6,6 +6,7 @@
         <Restaurant v-for="(data, i) in 20" :key="i" :data="data" />
         <Choice />
         <Regist />
+        <Footer />
     </div>
 </template>
 
@@ -15,6 +16,7 @@
     import Restaurant from "./components/Restaurant";
     import Choice from "./components/Choice";
     import Regist from "./components/Regist";
+    import Footer from "./components/Footer";
 
     export default {
         name: 'App',
@@ -23,7 +25,8 @@
             TodayLunch,
             Restaurant,
             Choice,
-            Regist
+            Regist,
+            Footer
         }
     }
 </script>
