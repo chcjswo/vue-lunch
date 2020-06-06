@@ -12,13 +12,18 @@
                 >
             </div>
         </div>
-        <button class="btn btn-dark btn-lg btn-block addRestaurant">등록</button>
+        <button class="btn btn-dark btn-lg btn-block" v-on:click="addRestaurant">등록</button>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Regist"
+        name: "Regist",
+        methods: {
+            addRestaurant() {
+                console.log('addRestaurant');
+            }
+        }
     }
 </script>
 
