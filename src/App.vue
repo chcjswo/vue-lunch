@@ -1,10 +1,14 @@
 <template>
     <div id="app" class="col-md-6 order-md-1">
-        <img alt="Vue logo" src="./assets/logo.png">
         <Header />
         <TodayLunch />
-        <Restaurant v-for="(data, i) in 20" :key="i" :data="data" />
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm restaurantList">
+            <h6 class="border-bottom border-gray pb-2 mb-0 text-left">등록된 식당 목록</h6>
+            <Restaurant v-for="(data, i) in 20" :key="i" :data="data" />
+        </div>
         <Choice />
+        <div class="col-md-6" style="height: 10px"></div>
         <Regist />
         <Footer />
     </div>
