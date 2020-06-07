@@ -19,7 +19,25 @@
         name: "TodayLunch",
         methods: {
             reChoiceRestaurant() {
-                console.log('reChoiceRestaurant');
+                this.$bvModal.msgBoxConfirm(`오늘은 이미 무극라멘으로 결정 됐습니다.다시 선택 하시겠습니까?`, {
+                    title: '다른게 먹고 싶어요!',
+                    size: 'md',
+                    buttonSize: 'sm',
+                    okVariant: 'danger',
+                    okTitle: '재선택',
+                    cancelTitle: '그냥 먹기',
+                    footerClass: 'p-2',
+                    hideHeaderClose: false,
+                    centered: true,
+                    contentClass: 'shadow'
+                })
+                .then(value => {
+                    alert(value);
+                })
+                .catch(err => {
+                    // An error occurred
+                    console.log(err);
+                });
             }
         }
     }
