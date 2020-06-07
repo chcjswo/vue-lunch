@@ -1,5 +1,10 @@
 <template>
     <div class="col-md-12 order-md-2">
+<!--        <div class="d-flex justify-content-center loading" v-show="false">-->
+<!--            <div class="spinner-border" role="status">-->
+<!--                <span class="sr-only">Loading...</span>-->
+<!--            </div>-->
+<!--        </div>-->
         <h4 class="mb-3 text-left">식당 선택</h4>
         <div class="mb-3"></div>
         <button class="btn btn-info btn-lg btn-block choiceRestaurant" v-on:click="choiceModal = !choiceModal">랜덤 식당 선택</button>
