@@ -4,7 +4,7 @@
         <TodayLunch />
         <div class="my-3 p-3 bg-white rounded shadow-sm restaurantList">
             <h6 class="border-bottom border-gray pb-2 mb-0 text-left">등록된 식당 목록</h6>
-            <Restaurant v-for="(data, i) in 20" :key="i" :data="data" />
+            <Restaurant v-for="(item, i) in this.restaurantList" :key="i" :item="item" />
         </div>
         <Choice />
         <div class="col-md-6" style="height: 10px"></div>
@@ -21,6 +21,8 @@
     import Regist from "./components/Regist";
     import Footer from "./components/Footer";
 
+    import axios from 'axios';
+
     export default {
         name: 'App',
         components: {
@@ -30,6 +32,19 @@
             Choice,
             Regist,
             Footer
+        },
+        data() {
+            return {
+                restaurantList: null
+            }
+        },
+        mounted() {
+            axios.get('https://lunch.mocadev.me/api/v2/lunch/')
+                .then((response) => {
+                    this.restaurantList = response.data.restaurantList;
+                }).catch((err) => {
+                    console.log('Error 발생: ', err);
+                });
         }
     }
 </script>

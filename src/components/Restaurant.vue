@@ -9,16 +9,16 @@
         </svg>
         <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray text-left align-top">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <strong class="text-gray-dark">한솥도시락</strong>
+                <strong class="text-gray-dark">{{ item.name }}</strong>
                 <b-button variant="outline-secondary"
                           size="sm"
-                          v-on:click="onClickRemove('5ccb9cf62bf5940ea2299e33', '한솥도시락', data)">
+                          v-on:click="onClickRemove(item._id, item.name, item.visitCount)">
                     삭제
                 </b-button>
             </div>
             <span class="d-block">
-                <span>{{data}}</span>번 방문 /
-                <span>124</span>번 선택
+                <span>{{ item.visitCount }}</span>번 방문 /
+                <span>{{ item.choiceCount }}</span>번 선택
             </span>
             <b-alert v-model="showDismissibleAlert" variant="danger" dismissible class="m-1 align-middle">
                 방문한적이 있는 식당은 삭제가 안됩니다.
@@ -31,7 +31,7 @@
     export default {
         name: "Restaurant",
         props: {
-            data: Number,
+            item: Object,
         },
         data() {
             return {
@@ -45,7 +45,7 @@
                 console.log("visitCount => ", visitCount);
 
                 if (visitCount > 0) {
-                    this.showDismissibleAlert=true;
+                    this.showDismissibleAlert = true;
                     return;
                     // notify("방문한적이 있는 식당은 삭제가 안됩니다.", "danger", 10);
                     // return;
