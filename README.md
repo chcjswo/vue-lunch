@@ -20,5 +20,5 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Project Description
+[GD 점심](https://github.com/chcjswo/gd_lunch) Vue 버전
